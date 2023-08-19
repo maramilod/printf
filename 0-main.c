@@ -8,5 +8,6 @@ int main(void)
 	_printf("String:[%s]\n", "I am a string !");
 	_printf(NULL);
 	_printf("%d\n", -1978);
+	_printf("%b\n", -12345);
 	return (0);
 }
