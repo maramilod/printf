@@ -16,7 +16,7 @@ int _printf(const char *format, ...)
 	va_start(args, format);
 	if (format == NULL)
 		return (-1);
-	while (format[i] != '\0')
+	for (i = 0; format[i] != '\0'; i++)
 	{
 		if (format[i] == '%')
 		{
@@ -24,26 +24,27 @@ int _printf(const char *format, ...)
 			if (format[i] == 'c')
 			{
 				_putchar(va_arg(args, int));
-				i++;
 				cou++;
 			}
 			else if (format[i] == 's')
-			{
 				cou += jaa(va_arg(args, char *));
-				i++;
-			}
 			else if (format[i] == '%')
 			{
 				_putchar('%');
-				i++;
 				cou++;
+			}
+			else if (format[i] == 'd' || format[i] == 'i')
+				cou += num(va_arg(args, int));
+			else
+			{
+				_putchar("%");
+				_putchar(format[i]);
 			}
 		}
 		else
 		{
 			_putchar(format[i]);
 			cou++;
-			i++;
 		}
 	}
 	va_end(args);
