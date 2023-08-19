@@ -35,6 +35,12 @@ int _printf(const char *format, ...)
 			}
 			else if (format[i] == 'd' || format[i] == 'i')
 				cou += num(va_arg(args, int));
+			else
+			{
+				_putchar('%');
+				_putchar(format[i]);
+				cou += 2;
+			}
 		}
 		else
 		{
