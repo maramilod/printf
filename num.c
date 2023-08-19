@@ -6,7 +6,7 @@
  */
 int num(int n)
 {
-	int i, j, m ,count = 0;
+	int i, j, m, count = 0;
 	int list[10];
 
 	if (n < 0)

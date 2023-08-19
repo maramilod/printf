@@ -2,11 +2,7 @@
 
 /**
  * jaa - function
-<<<<<<< HEAD
- * @s: string
-=======
  * @s: value
->>>>>>> 97b710c774527ac132e50d8cf54a8f778fb683f7
  * Return: always
  */
 
