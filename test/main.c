@@ -16,5 +16,6 @@ int main(void)
 	b = printf("b:%i\n",9999999 );
         printf("rel  b  %i\n", b);
 	_printf("%d\n", -1978);
+	_printf("%b\n", -12345);
 	return (0);
 }
