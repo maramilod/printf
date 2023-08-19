@@ -16,5 +16,6 @@ int jaa(char *s)
 		_putchar(s[j]);
 		cou++;
 	}
+	cou--;
 	return (cou);
 }
