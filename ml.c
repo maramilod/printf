@@ -37,7 +37,7 @@ int _printf(const char *format, ...)
 				cou += num(va_arg(args, int));
 			else
 			{
-				_putchar("%");
+				_putchar('%');
 				_putchar(format[i]);
 			}
 		}
