@@ -6,13 +6,14 @@
  */
 int num(int n)
 {
-	int i, j, m;
+	int i, j, m ,count = 0;
 	int list[10];
 
 	if (n < 0)
 	{
 		_putchar('-');
 		n = -1 * n;
+		count++;
 	}
 	m = n;
 	for (i = 0; m != '\0'; m /= 10)
@@ -25,7 +26,10 @@ int num(int n)
 		n /= 10;
 	}
 	for (j = 0; j < i; j++)
+	{
 		_putchar(list[j] + 48);
+		count++;
+	}
 
-	return (i);
+	return (count);
 }

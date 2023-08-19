@@ -2,6 +2,7 @@
 
 /**
  * jaa - function
+ * @s: string
  * Return: always
  */
 
