@@ -7,5 +7,15 @@ int _putchar(char c);
 
 int jaa(char *s);
 int num(int n);
-
+/**
+ * struct fmt - struct
+ *
+ * @fr: format
+ * @fn: array
+ */
+struct fmt
+{
+	char fr;
+	int (*fn)(va_list, char[], int, int, int, int);
+};
 #endif

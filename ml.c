@@ -24,20 +24,11 @@ void main_print(char array[], int *i)
 int _printf(const char *format, ...)
 {
 	va_list args;
-<<<<<<< HEAD
 	int i, cou = 0;
 	char buffer[BUF_OF];
 	int flags, width, precision, lenght, buf_i = 0;
 
 	if (format == NULL)
-=======
-	unsigned int i = 0, cou = 0;
-
-	va_start(args, format);
-	if (format == NULL || (format[0] == '%' && !format[1]))
-		return (-1);
-	if (format[0] == '%' && format[1] == ' ' && !format[2])
->>>>>>> d534c5330a48817d857dc26681b93a3e746ab2c5
 		return (-1);
 	va_list (args, format);
 	for (i = 0; format[i] && format != '\0'; i++)
