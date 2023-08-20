@@ -1,6 +1,19 @@
 #include "main.h"
 #include <stdarg.h>
 #include <stdio.h>
+#include <unistd.h>
+/**
+ * main_print - function
+ *
+ * @array: array
+ * @i: value
+ */
+void main_print(char array[], int *i)
+{
+	if (i > 0)
+		write(1, &array[0], *i);
+	*i = 0;
+}
 /**
  * _printf - function that produces output according to a format.
  * @format: is a character string. The format string
@@ -11,43 +24,36 @@
 int _printf(const char *format, ...)
 {
 	va_list args;
-	int i = 0, cou = 0;
+	int i, cou = 0;
+	char buffer[BUF_OF];
+	int flags, width, precision, lenght, buf_i = 0;
 
-	va_start(args, format);
 	if (format == NULL)
 		return (-1);
-	for (i = 0; format[i] != '\0'; i++)
+	va_list (args, format);
+	for (i = 0; format[i] && format != '\0'; i++)
 	{
 		if (format[i] == '%')
 		{
-			++i;
-			if (format[i] == 'c')
-			{
-				_putchar(va_arg(args, int));
-				cou++;
-			}
-			else if (format[i] == 's')
-				cou += jaa(va_arg(args, char *));
-			else if (format[i] == '%')
-			{
-				_putchar('%');
-				cou++;
-			}
-			else if (format[i] == 'd' || format[i] == 'i')
-				cou += num(va_arg(args, int));
-			else
-			{
-				_putchar('%');
-				_putchar(format[i]);
-				cou += 2;
-			}
+			main_print(buffer, &buf_i);
+			flags = fofo(format, &i);
+			width = wawa(format, &i, args);
+			precision = prere(format, &i, args);
+			lenght = lolo(format, &i);
+			i++;
+			if (all(format, &i, args, buffer, width, flags, precision, lenght) == -1)
+				return (-1);
+			cou += all(format, &i, args, buffer, width, flags, precision, lenght);
 		}
 		else
 		{
-			_putchar(format[i]);
+			buffer[buf_i++] = format[i];
+			if (buf_i == BUF_OF)
+				main_print(buffer, &buf_i);
 			cou++;
 		}
 	}
+	main_print(buffer, buf_i);
 	va_end(args);
 	return (cou);
 }
