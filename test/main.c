@@ -6,10 +6,14 @@ int main(void)
 {
 	int len, a, b;
 
-	_printf("Let's try to printf a simple sentence.\n");
-	_printf("Character:[%c]\n", "h");
-	len = _printf("String:[%s]\n",  "kdjgnliu");
-	a = printf("String:[%s]\n", "I am a string !");
+	char *c;
+
+	c = NULL;
+	printf(",xjghkxg,hhgldfghfdi \n");
+	_printf("Let's try to printf asimple sentence.\n");
+	_printf("Character:[%c]\n", 'h');
+	len = _printf("String:[%s]\n", c);
+	a = printf("String:[%s]\n", c);
 	_printf(".jnxd.gdkx");
 	printf("Length:[%d, %i]\n", 66,  8);
 	printf("rel a  %i\n", a);
