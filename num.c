@@ -1,35 +1,39 @@
 #include "main.h"
 /**
  * num - function
- * @n: number
+ * @type: number
+ * @buffer: array
+ * @width: w
+ * @flag: flag
+ * @pre: p
+ * @lenght: le
+ *
  * Return: count
  */
-int num(int n)
+int num(va_list type, char buffer[], int width,
+		int flag, int pre, int lenght)
 {
-	int i, j, m, count = 0;
-	int list[10];
+	int i, niv = 0;
+	long int n = va_arg(types, long int);
+	unsigned long int m;
 
+	n = csn(n, lenght);
+	i = BUF_OF - 2;
+
+	if (n == 0)
+		buffer[i--] = '0';
+	buffer[BUF_OF - 1] = '\0';
+	m =  (unsigned long int)n;
 	if (n < 0)
 	{
-		_putchar('-');
-		n = -1 * n;
-		count++;
+		m = (unsigned long int) ((-1) * n);
+		niv = 1;
 	}
-	m = n;
-	for (i = 0; m != '\0'; m /= 10)
+	while (num > 0)
 	{
-		i++;
+		buffer[i--] = (num % 10) + '0';
+		num /= 10;
 	}
-	for (j = i - 1; j >= 0; j--)
-	{
-		list[j] = (n % 10);
-		n /= 10;
-	}
-	for (j = 0; j < i; j++)
-	{
-		_putchar(list[j] + 48);
-		count++;
-	}
-
-	return (count);
+	i++;
+	return (wn(niv, i, beffr, width, flag, pre, lenght));
 }

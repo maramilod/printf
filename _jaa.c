@@ -2,25 +2,49 @@
 #include <stdio.h>
 #include <unistd.h>
 /**
- * jaa - function
- * @s: value
+ * jaa - function print strings
+ * @types: lista
+ * @buffer: array
+ * @width: lenght
+ * @pre: p
+ * @flag: f
+ * @lenght: size
+ *
  * Return: always
  */
 
-int jaa(char *s)
+int jaa(va_list types, char buffer[],
+		int width, int flag, int pre, int lenght)
 {
-	int j;
+	int j, i;
 	int cou = 0;
+	char *s = va_arg(types, char *);
 
+	(void)(buffer);
+	(void)(width);
+	(void)(pre);
+	(void)(lenght);
 	if (s == NULL)
 	{
-		write(1, "(null)", 6);
-		return (-1);
+		s = "(null)";
+		if (pre >= 6)
+			s = "      ";
 	}
 	for (j = 0; s[j] != '\0'; j++)
+		;
+
+	if (pre >=  0 && pre < j)
+		j = pre;
+	if (width > j)
 	{
-		_putchar(s[j]);
-		cou++;
+		if (flags & 1)
+		{
+			write(1, &s[0], j);
+			for (i = width - j; i > 0; i--)
+				_putchar(' ');
+			write(1, &s[0], j);
+			return (width);
+		}
 	}
-	return (cou);
+	return (write(1, s, j));
 }

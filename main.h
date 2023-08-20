@@ -7,8 +7,16 @@ int _putchar(char c);
 
 int all(const char *format, int *i, va_list args, char buffer[],
 		int width, int flag, int pre, int lenght);
-int jaa(char *s);
-int num(int n);
+int jaa(va_list types, char buffer[], int width, int flag,
+	int pre, int lenght);
+int num(va_list type, char buffer[], int width,
+	int flag, int pre, int lenght);
+int prb(va_list types, char buffer[], int width,
+	int flag, int pre, int lenght);
+int prs(va_list types, char buffer[], int width,
+	int flag, int pre, int lenght);
+int prcha(va_list types, char buffer[], int width,
+	int flag, int pre, int lenght);
 /**
  * struct fmt - struct
  *
