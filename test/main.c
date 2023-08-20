@@ -8,10 +8,14 @@ int main(void)
 
 	char *c;
 
+	char e;
+
+	e = '\0';
 	c = NULL;
 	printf(",xjghkxg,hhgldfghfdi \n");
 	_printf("Let's try to printf asimple sentence.\n");
-	_printf("Character:[%c]\n", 'h');
+	_printf("Character:[%c]\n", e);
+	printf("character:[%c]\n", e);
 	len = _printf("String:[%s]\n", c);
 	a = printf("String:[%s]\n", c);
 	_printf(".jnxd.gdkx");
