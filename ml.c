@@ -40,7 +40,8 @@ int _printf(const char *format, ...)
 			else
 			{
 				_putchar('%');
-				cou++;
+				_putchar(format[i]);
+				cou += 2;
 			}
 		}
 		else
