@@ -39,7 +39,7 @@ int all(const char *format, int *i, va_list args, char buffer[],
 		if (format[*i] == '\0')
 			return (-1);
 		not += _putchar('%');
-		if (format[*i - 1] == ' ')
+		if (format[*i + 1] == ' ')
 			not += _putchar(' ');
 		else if (width)
 		{
