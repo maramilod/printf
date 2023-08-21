@@ -34,21 +34,20 @@ int all(const char *format, int *i, va_list args, char buffer[],
 						pre, lenght));
 	x++;
 	}
-		if (format[*i])
-			return (-1);
-		not += _putchar('%');
-		if (format[*i - 1] == ' ')
-			not += _putchar(' ');
-		else if (width)
-		{
+	if (!format[*i])
+		return (-1);
+	not += _putchar('%');
+	if (format[*i - 1] == ' ')
+		not += _putchar(' ');
+	else if (width)
+	{
+		--(*i);
+		while (format[*i] != ' ' && format[*i] != '%')
 			--(*i);
-			while (format[*i] != ' ' && format[*i] != '%')
-				--(*i);
-			if (format[*i] == ' ')
-				--(*i);
-			return (1);
-		}
-		not += write(1, &format[*i], 1);
-		return (not);
-	return (-1);
+		if (format[*i] == ' ')
+			--(*i);
+		return (1);
+	}
+	not += write(1, &format[*i], 1);
+	return (not);
 }
