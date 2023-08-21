@@ -1,5 +1,5 @@
 #include "main.h"
-#include <unisted.h>
+#include <unistd.h>
 
 /**
  * all - function to print

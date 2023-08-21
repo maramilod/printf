@@ -20,10 +20,10 @@ int prrev(va_list type, char buffer[],
 	(void)(flag);
 	(void)(lenght);
 
-	s = va_arg(types, char *);
+	s = va_arg(type, char *);
 	if (s == NULL)
 	{
-		void(pre);
+		(void)(pre);
 		s = "(Null)";
 	}
 	for (i = 0; s[i]; i++)

@@ -10,7 +10,7 @@
  */
 void main_print(char array[], int *i)
 {
-	if (i > 0)
+	if (*i > 0)
 		write(1, &array[0], *i);
 	*i = 0;
 }
@@ -30,8 +30,8 @@ int _printf(const char *format, ...)
 
 	if (format == NULL)
 		return (-1);
-	va_list (args, format);
-	for (i = 0; format[i] && format != '\0'; i++)
+	va_start(args, format);
+	for (i = 0; format && format[i] != '\0'; i++)
 	{
 		if (format[i] == '%')
 		{
@@ -53,7 +53,7 @@ int _printf(const char *format, ...)
 			cou++;
 		}
 	}
-	main_print(buffer, buf_i);
+	main_print(buffer, &buf_i);
 	va_end(args);
 	return (cou);
 }

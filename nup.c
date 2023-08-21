@@ -13,7 +13,7 @@ int prnupr(va_list type, char buffer[],
 		int width, int flag, int pre, int lenght)
 {
 	int i = 0, offset = 0;
-	char *s = va_arg(types, char *);
+	char *s = va_arg(type, char *);
 
 	(void)(flag);
 	(void)(lenght);

@@ -17,7 +17,6 @@ int jaa(va_list types, char buffer[],
 		int width, int flag, int pre, int lenght)
 {
 	int j, i;
-	int cou = 0;
 	char *s = va_arg(types, char *);
 
 	(void)(buffer);
@@ -37,7 +36,7 @@ int jaa(va_list types, char buffer[],
 		j = pre;
 	if (width > j)
 	{
-		if (flags & 1)
+		if (flag & 1)
 		{
 			write(1, &s[0], j);
 			for (i = width - j; i > 0; i--)

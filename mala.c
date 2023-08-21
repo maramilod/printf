@@ -14,7 +14,7 @@
 int pruns(va_list types, char buffer[], int width,
 		int flag, int pre, int lenght)
 {
-	unsigned long int n = va_arg(typs, unsigned long int);
+	unsigned long int n = va_arg(types, unsigned long int);
 	int x = BUF_OF - 2;
 
 	n = csu(n, lenght);
@@ -23,10 +23,10 @@ int pruns(va_list types, char buffer[], int width,
 	buffer[BUF_OF - 1] = '\0';
 	while (n > 0)
 	{
-		buffr[x--] = (n % 10) + '0';
+		buffer[x--] = (n % 10) + '0';
 		n /= 10;
 	}
-	i++;
+	x++;
 
 	return (wu(0, x, buffer, width, flag, pre, lenght));
 }
@@ -48,7 +48,7 @@ int proc(va_list types, char buffer[], int width, int flag,
 	unsigned long int n, in;
 	int x;
 
-	n = va_args(types, unsigned long int);
+	n = va_arg(types, unsigned long int);
 	in = n;
 	x = BUF_OF - 2;
 	(void)(width);
@@ -69,7 +69,7 @@ int proc(va_list types, char buffer[], int width, int flag,
 		buffer[x--] = '0';
 	x++;
 
-	return (wu(0, buffr, width, flag, pre, lenght));
+	return (wu(0, x, buffer, width, flag, pre, lenght));
 }
 
 /**
@@ -87,7 +87,7 @@ int prhax(va_list type, char buffer[], int width,
 	int flag, int pre, int lenght)
 {
 	return (prhexa(type, "0123456789abcdef",
-				buffer, width, 'x', flag, pr, lenght));
+				buffer, width, 'x', flag, pre, lenght));
 }
 
 /**
@@ -127,7 +127,7 @@ int prhexa(va_list types, char arr[], char buffer[],
 	unsigned long int n, in;
 	int x;
 
-	n = va_arg(type, unsigned long int);
+	n = va_arg(types, unsigned long int);
 	in = n;
 	x = BUF_OF - 2;
 
@@ -148,5 +148,5 @@ int prhexa(va_list types, char arr[], char buffer[],
 	}
 	x++;
 
-	return (wu(0, x, buffer, width, flag, pre, siz));
+	return (wu(0, x, buffer, width, flag, pre, lenght));
 }

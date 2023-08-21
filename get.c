@@ -20,7 +20,7 @@ int fofo(const char *format, int *x)
 		for (i = 0; flagc[i] != '\0'; i++)
 			if (format[c] == flagc[i])
 			{
-				flag |= flafar[i];
+				flag |= flagar[i];
 				break;
 			}
 		if (flagc[i] == 0)
@@ -73,7 +73,7 @@ int wawa(const char *format, int *x, va_list args)
 
 int prere(const char *format, int *x, va_list args)
 {
-	int c, pr;
+	int c, pre;
 
 	pre = 0;
 	c  = *x + 1;

@@ -51,6 +51,17 @@ int proc(va_list types, char buffer[], int idth,
 		int flag, int pre, int lenght);
 int pruns(va_list types, char buffer[], int width,
 		int flag, int pre, int lenght);
+
+int wu(int is, int i, char buffer[],
+		int width, int flag, int pre, int lenght);
+int fwn(int is_nev, int i, char buffer[], int width,
+		int flag, int pre, int lenght);
+int handler(char c, char buffer[], int width, int flag,
+		int pre, int lenght);
+int swn(int i, char buffer[], int width,
+		int flag, int pre, int lenght, char padd, char xtra);
+int wp(char buffer[], int i, int size,
+		int width, int flag, char padd, char xtra, int paddstart);
 /**
  * struct fmt - struct
  *

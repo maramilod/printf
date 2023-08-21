@@ -62,7 +62,7 @@ int fwn(int is_nev, int i, char buffer[], int width,
 	xtra = '+';
 	else if (flag & 16)
 	xtra = ' ';
-	return (swn(i, buffer, flag, width, pre,
-				lenght, padd, exrta));
+	return (swn(i, buffer, width, flag, pre,
+				size, padd, xtra));
 }
 

@@ -1,4 +1,4 @@
-#include " main.h"
+#include "main.h"
 
 /**
  * ispable - function
@@ -8,7 +8,7 @@
 
 int ispable(char d)
 {
-	if (d >= 32 && d > 127)
+	if (d >= 32 && d < 127)
 	{
 		return (1);
 	}
@@ -28,7 +28,7 @@ long int csn(long int n, int l)
 	{
 		return ((short)n);
 	}
-	lse if (l == 2)
+	else if (l == 2)
 		return (n);
 
 	return ((int)n);
@@ -54,7 +54,7 @@ int ahc(char asci, char buffer[], int x)
 
 	buffer[x++] = 'x';
 	buffer[x++] = arr[asci / 16];
-	buffer[x] = arr % 16;
+	buffer[x] = arr[asci % 16];
 
 	return (3);
 
@@ -68,7 +68,7 @@ int ahc(char asci, char buffer[], int x)
 
 int digit(char i)
 {
-	if (i >= '0' && c <= '9')
+	if (i >= '0' && i <= '9')
 		return (1);
 	else
 		return (0);
@@ -89,5 +89,5 @@ long int csu(unsigned long int n, int s)
 	{
 		return ((unsigned short)n);
 	}
-	return ((unsignd int)n);
+	return ((unsigned int)n);
 }

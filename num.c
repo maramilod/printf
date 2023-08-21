@@ -14,7 +14,7 @@ int num(va_list type, char buffer[], int width,
 		int flag, int pre, int lenght)
 {
 	int i, niv = 0;
-	long int n = va_arg(types, long int);
+	long int n = va_arg(type, long int);
 	unsigned long int m;
 
 	n = csn(n, lenght);
@@ -29,11 +29,11 @@ int num(va_list type, char buffer[], int width,
 		m = (unsigned long int) ((-1) * n);
 		niv = 1;
 	}
-	while (num > 0)
+	while (m > 0)
 	{
-		buffer[i--] = (num % 10) + '0';
-		num /= 10;
+		buffer[i--] = (m % 10) + '0';
+		m /= 10;
 	}
 	i++;
-	return (wn(niv, i, beffr, width, flag, pre, lenght));
+	return (fwn(niv, i, buffer, width, flag, pre, lenght));
 }

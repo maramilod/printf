@@ -14,47 +14,46 @@
 int swn(int i, char buffer[], int width,
 		int flag, int pre, int lenght, char padd, char xtra)
 {
-	int j;
-	int paddstart = 1;
+	int j, paddstart = 1;
 
-	if (pre == 0 && i == BUF_OF - 2 && bufer[i] == '0' && width == 0)
+	if (pre == 0 && i == BUF_OF - 2 && buffer[i] == '0' && width == 0)
 		return (0);
 	if (pre == 0 && i == BUF_OF - 2 && buffer[i] == '0')
 		buffer[i] = padd = ' ';
-	if (pre > 0 && pre < size)
+	if (pre > 0 && pre < lenght)
 		padd = ' ';
-	while (pre > size)
-		buffer[--i] = '0', size++;
+	while (pre > lenght)
+		buffer[--i] = '0', lenght++;
 	if (xtra != 0)
-		size++;
-	if (width > size)
+		lenght++;
+	if (width > lenght)
 	{
-		for (j = 1; j < width - size + 1; j++)
+		for (j = 1; j < width - lenght + 1; j++)
 			buffer[j] = padd;
 		buffer[j] = '\0';
 		if (flag & 1 && padd == ' ')
 		{
 			if (xtra)
 				buffer[--i] = xtra;
-			return (write(1, &buffer[i], size) + write(1, &buffer[1], j - 1));
+			return (write(1, &buffer[i], lenght) + write(1, &buffer[1], j - 1));
 		}
 		else if (!(flag & 1) && padd == ' ')
 		{
 			if (xtra)
 				buffer[--i] = xtra;
-			return (write(1, &buffer[1], j - 1) + write(1, &buffer[i], size));
+			return (write(1, &buffer[1], j - 1) + write(1, &buffer[i], lenght));
 		}
 		else if (!(flag & 1) && padd == '0')
 		{
 			if (xtra)
-				buffer[--padstart] = xtra;
+				buffer[--paddstart] = xtra;
 			return (write(1, &buffer[paddstart], j - paddstart)
-					+ write(1, &buffer[i], size - (1 - paddstart)));
+					+ write(1, &buffer[i], lenght - (1 - paddstart)));
 		}
 	}
 	if (xtra)
-		buffer[--i] - xtra;
-	return (write(1, &buffer[i], size));
+		buffer[--i] =  xtra;
+	return (write(1, &buffer[i], lenght));
 }
 /**
  * wu - fundtion writes an unsigned num
@@ -78,7 +77,7 @@ int wu(int is, int i, char buffer[],
 
 	if (pre == 0 && i == BUF_OF - 2 && buffer[i] == '0')
 		return (0);
-	if (pre > 0 && pre < length)
+	if (pre > 0 && pre < lenght)
 		padd = ' ';
 	while (pre > size)
 	{
@@ -155,5 +154,5 @@ int wp(char buffer[], int i, int size,
 	buffer[--i] = '0';
 	if (xtra)
 		buffer[--i] = xtra;
-	return (writ(1, &buffer[i], BUF_OF - i - 1));
+	return (write(1, &buffer[i], BUF_OF - i - 1));
 }
