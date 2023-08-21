@@ -18,7 +18,7 @@ int prs(va_list types, char buffer[], int width,
 	(void)(width);
 	(void)(pre);
 	(void)(lenght);
-	return (write(1, "%", 1));
+	return (write(1, "%%", 1));
 }
 /**
  * prcha - function that print character
@@ -53,7 +53,8 @@ int prb(va_list types, char buffer[], int width,
 		int flag, int pre, int lenght)
 {
 	int cou;
-	unsigned int i, mal, x, ans, a[32];
+	unsigned int i, mal, x, ans;
+        unsigned int a[32];
 	char y;
 
 	(void)(buffer);

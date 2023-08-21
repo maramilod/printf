@@ -24,7 +24,7 @@ void main_print(char array[], int *i)
 int _printf(const char *format, ...)
 {
 	va_list args;
-	int i, cou = 0;
+	int i, cou = 0, j = 0;
 	char buffer[BUF_OF];
 	int flags, width, precision, lenght, buf_i = 0;
 
@@ -41,9 +41,11 @@ int _printf(const char *format, ...)
 			precision = prere(format, &i, args);
 			lenght = lolo(format, &i);
 			i++;
-			if (all(format, &i, args, buffer, width, flags, precision, lenght) == -1)
+			j = all(format, &i, args, buffer, width, flags, precision, lenght);
+			if (j == -1)
 				return (-1);
-			cou += all(format, &i, args, buffer, width, flags, precision, lenght);
+
+			cou += j;
 		}
 		else
 		{
