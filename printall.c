@@ -19,12 +19,12 @@ int all(const char *format, int *i, va_list args, char buffer[],
 		int width, int flag, int pre, int lenght)
 {
 	int x = 0, not = 0, cou = -1;
-	fmt types[] = {
-		{'c', prcha}, {'%', prs}, {'s', _jaa},
+	fmt_t types[] = {
+		{'c', prcha}, {'%', prs}, {'s', jaa},
 		{'d', num}, {'i', num}, {'b', prb},
 		{'x', prhax}, {'X', prhaxup}, {'o', proc},
 		{'u', pruns}, {'p', prpo}, {'S', prnupr},
-		{'r', prrev}, {'R', prot13}, {'\0', NULL}
+		{'r', prrev}, {'R', pro13}, {'\0', NULL}
 	};
 
 	while (types[x].fmt != '\0')

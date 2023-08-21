@@ -53,7 +53,7 @@ int prb(va_list types, char buffer[], int width,
 		int flag, int pre, int lenght)
 {
 	int cou;
-	unsigned int i, mal, x, ans, al[32];
+	unsigned int i, mal, x, ans, a[32];
 	char y;
 
 	(void)(buffer);
@@ -64,18 +64,18 @@ int prb(va_list types, char buffer[], int width,
 
 	i = va_arg(types, unsigned int);
 	mal = 2147483648;
-	al[0] = i / mal;
+	a[0] = i / mal;
 	for (x = 1; x < 32; x++)
 	{
 		mal /= 2;
-		al[x] = (i / mal) % 2;
+		a[x] = (i / mal) % 2;
 	}
-	for (x = 0; ans = 0; cou = 0; x < 32; x++)
+	for (x = 0, ans = 0, cou = 0; x < 32; x++)
 	{
 		ans += a[x];
 		if (ans || x == 31)
 		{
-			y = '0' + al[x];
+			y = '0' + a[x];
 			write(1, &y,  1);
 			cou++;
 		}
