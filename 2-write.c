@@ -109,8 +109,7 @@ int wu(int is, int i, char buffer[],
  * @padd: padding
  * @xtra: extra char
  * @paddstart: start
- *
- * REturn: always
+ * Return: always
  */
 int wp(char buffer[], int i, int size,
 		int width, int flag, char padd, char xtra, int paddstart)

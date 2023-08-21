@@ -2,7 +2,7 @@
 #define MAIN_H
 
 #define BUF_OF 1024
-
+#include <stdio.h>
 #include <stdarg.h>
 #include <unistd.h>
 
@@ -71,8 +71,10 @@ int wp(char buffer[], int i, int size,
 struct fmt
 {
 	char fmt;
+	
 	int(*fn)(va_list, char[], int, int, int, int);
 };
+
 /**
  * typed struct fmt fmt_t struct op
  *

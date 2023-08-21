@@ -13,7 +13,7 @@ int prs(va_list types, char buffer[], int width,
 		int flag, int pre, int lenght)
 {
 	(void)(flag);
-	(void)(pre);
+	(void)(buffer);
 	(void)(types);
 	(void)(width);
 	(void)(pre);
@@ -35,7 +35,7 @@ int prcha(va_list types, char buffer[], int width,
 {
 	char n = va_arg(types, int);
 
-	return (hwc(n, buffer, width, flag, pre, lenght));
+	return (handler(n, buffer, width, flag, pre, lenght));
 }
 
 /**

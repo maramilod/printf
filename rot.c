@@ -9,7 +9,7 @@
  * @lenght: size
  * Return: a
  */
-int prot13(va_list type, char buffer[],
+int pro13(va_list type, char buffer[],
 		int width, int flag, int pre, int lenght)
 {
 	char x;
