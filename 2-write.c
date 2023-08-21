@@ -5,10 +5,10 @@
  * @buffer: array
  * @width: width
  * @flag: flags
- * @pre: precision
  * @lenght: lenght
  * @padd: pading char
  * @xtra: Extra char
+ * @pre: value
  * Return: number of printed chars
  */
 int swn(int i, char buffer[], int width,

@@ -54,7 +54,7 @@ int prb(va_list types, char buffer[], int width,
 {
 	int cou;
 	unsigned int i, mal, x, ans;
-        unsigned int a[32];
+	unsigned int a[32];
 	char y;
 
 	(void)(buffer);
