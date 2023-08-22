@@ -84,11 +84,7 @@ int wu(int is, int i, char buffer[],
 		buffer[--i] = '0';
 		size++;
 	}
-<<<<<<< HEAD
-	if ((flag & 4) && !(flag & 1))
-=======
 	if ((flag & 4) && (!(flag & 1)))
->>>>>>> bfec34dbe2e18d196dff95b70b94da47bf296753
 		padd = '0';
 	if (width > size)
 	{
