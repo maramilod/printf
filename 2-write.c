@@ -85,7 +85,7 @@ int wu(int is, int i, char buffer[],
 		size++;
 	}
 	if ((flag & 4) && !(flag & 1))
-			padd = '0';
+		padd = '0';
 	if (width > size)
 	{
 		for (j = 0; j < width - size; j++)
