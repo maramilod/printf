@@ -33,7 +33,9 @@ int prs(va_list types, char buffer[], int width,
 int prcha(va_list types, char buffer[], int width,
 		int flag, int pre, int lenght)
 {
-	char n = va_arg(types, int);
+	char n;
+
+	n = va_arg(types, int);
 
 	return (handler(n, buffer, width, flag, pre, lenght));
 }
