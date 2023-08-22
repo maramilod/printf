@@ -18,7 +18,7 @@ int all(const char *format, int *i, va_list args, char buffer[],
 
 		int width, int flag, int pre, int lenght)
 {
-	int x = 0, not = 0, cou = -1;
+	int x = 0, not = 0;
 	fmt_t types[] = {
 		{'c', prcha}, {'%', prs}, {'s', jaa},
 		{'d', num}, {'i', num}, {'b', prb},
@@ -34,24 +34,20 @@ int all(const char *format, int *i, va_list args, char buffer[],
 						pre, lenght));
 	x++;
 	}
-	if (types[x].fmt == '\0')
+	if (!format[*i])
+		return (-1);
+	not += _putchar('%');
+	if (format[*i - 1] == ' ')
+		not += _putchar(' ');
+	else if (width)
 	{
-		if (format[*i] == '\0')
-			return (-1);
-		not += _putchar('%');
-		if (format[*i - 1] == ' ')
-			not += _putchar(' ');
-		else if (width)
-		{
+		--(*i);
+		while (format[*i] != ' ' && format[*i] != '%')
 			--(*i);
-			while (format[*i] != ' ' && format[*i] != '%')
-				--(*i);
-			if (format[*i] == ' ')
-				--(*i);
-			return (1);
-		}
-		not += write(1, &format[*i], 1);
-		return (not);
+		if (format[*i] == ' ')
+			--(*i);
+		return (1);
 	}
-	return (cou);
+	not += write(1, &format[*i], 1);
+	return (not);
 }

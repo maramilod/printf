@@ -127,6 +127,7 @@ int prhexa(va_list types, char arr[], char buffer[],
 	unsigned long int n, in;
 	int x;
 
+	(void)(width);
 	n = va_arg(types, unsigned long int);
 	in = n;
 	x = BUF_OF - 2;

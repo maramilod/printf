@@ -41,6 +41,12 @@ int jaa(va_list types, char buffer[],
 			write(1, &s[0], j);
 			for (i = width - j; i > 0; i--)
 				_putchar(' ');
+			return (width);
+		}
+		else
+		{
+			for (i = 0; i < width - j; i++)
+				_putchar(' ');
 			write(1, &s[0], j);
 			return (width);
 		}

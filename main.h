@@ -73,12 +73,12 @@ int wp(char buffer[], int i, int size,
 struct fmt
 {
 	char fmt;
-	
-	int(*fn)(va_list, char[], int, int, int, int);
+
+	int (*fn)(va_list, char[], int, int, int, int);
 };
 
 /**
- * typed struct fmt fmt_t struct op
+ * typed - struct fmt fmt_t struct op
  *
  * @fmt: the format
  * @fm_t: array

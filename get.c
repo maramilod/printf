@@ -41,9 +41,10 @@ int fofo(const char *format, int *x)
 
 int wawa(const char *format, int *x, va_list args)
 {
-	int c, width = 0;
+	int c = *x;
+	int width = 0;
 
-	for (c = *x + 1; format[c] != '\0'; c++)
+	for (c += 1; format[c] != '\0'; c++)
 	{
 		if (digit(format[c]))
 		{
@@ -76,27 +77,11 @@ int prere(const char *format, int *x, va_list args)
 	int c, pre;
 
 	pre = 0;
-	c  = *x + 1;
+	c = *x + 1;
 
 	if (format[c] != '.')
 		return (-1);
-
-	for (c = 1; format[c] != '\0'; c++)
-	{
-		if (digit(format[c]))
-		{
-			pre *= 10;
-			pre += format[c] - '0';
-		}
-		else if (format[c] == '*')
-		{
-			c++;
-			pre = va_arg(args, int);
-			break;
-		}
-		else
-			break;
-	}
+	pre = wawa(format, &c, args);
 	*x = c - 1;
 	return (pre);
 }
