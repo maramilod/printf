@@ -18,9 +18,9 @@ int handler(char c, char buffer[], int width, int flag, int pre, int lenght)
 	(void)(lenght);
 
 	if (flag & 4)
-	padd = '0';
-	buffer[i++] = c;
-	buffer[i] = '\0';
+		padd = '0';
+	buffer[i] = c;
+	buffer[++i] = '\0';
 	if (width > 1)
 {
 	buffer[BUF_OF - 1] = '\0';
