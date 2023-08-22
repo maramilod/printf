@@ -36,10 +36,10 @@ int _printf(const char *format, ...)
 		if (format[i] == '%')
 		{
 			main_print(buffer, &buf_i);
-			flags = fofo(format, &i);
 			width = wawa(format, &i, args);
-			precision = prere(format, &i, args);
+			flags = fofo(format, &i);
 			lenght = lolo(format, &i);
+			precision = prere(format, &i, args);
 			i++;
 			j = all(format, &i, args, buffer, width, flags, precision, lenght);
 			if (j == -1)
