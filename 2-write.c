@@ -77,7 +77,7 @@ int wu(int is, int i, char buffer[],
 
 	if (pre == 0 && i == BUF_OF - 2 && buffer[i] == '0')
 		return (0);
-	if (pre > 0 && pre < lenght)
+	if (pre > 0 && pre < size)
 		padd = ' ';
 	while (pre > size)
 	{
@@ -93,8 +93,11 @@ int wu(int is, int i, char buffer[],
 		buffer[j] = '\0';
 		if (flag & 1)
 		{
-			return (write(1, &buffer[0], j) + write(1, &buffer[i],
-						size));
+			return (write(1, &buffer[i], size) + write(1, &buffer[0], j));
+		}
+		else
+		{
+			return (write(1, &buffer[0], j) + write(1, &buffer[i], size));
 		}
 	}
 	return (write(1, &buffer[i], size));

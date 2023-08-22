@@ -48,7 +48,7 @@ int ahc(char asci, char buffer[], int x)
 
 	if (asci < 0)
 	{
-		asci *= 10;
+		asci *= -1;
 	}
 	buffer[x++] = '\\';
 
