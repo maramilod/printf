@@ -18,7 +18,7 @@ int prs(va_list types, char buffer[], int width,
 	(void)(width);
 	(void)(pre);
 	(void)(lenght);
-	return (write(1, "%%", 1));
+	return (write(1, "%", 1));
 }
 /**
  * prcha - function that print character
